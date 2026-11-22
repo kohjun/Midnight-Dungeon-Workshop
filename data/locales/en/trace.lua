@@ -1,0 +1,135 @@
+-- data/locales/en/trace.lua
+-- Tier 5 true-ending campaign "The Master's Trace" strings (English): rift interference levels, the master's silver seal,
+-- the six journals, seal sockets and the final boss. Journal ids and order follow data/master_trace.lua. No logic.
+
+return {
+    trace = {
+        button = "Journals {journals}/{total} · Seals {lit}/{slots}",
+        interference = {
+            name = "Rift interference",
+            badge = "Rift {level}",
+            level = "Rift interference Lv.{level}",
+            rose = "Rift interference rises to Lv.{level} — tougher monsters, faster overclock wear, more forgers",
+            hover_body = "Rises one level each month (max {max}). Now: monster HP +{hp}% · damage taken -{def}% · "
+                .. "overclock heat risk +{heat}%p · honest customers -{honest}%",
+        },
+        seal = {
+            name = "Master's silver seal",
+            found = "Silver seal found! Buy this relic to unlock one of the master's journals",
+            tag = "Silver seal",
+            tag_value = "Master's trace — buy for a journal",
+            claimed = "Journal taken",
+            hint = "This relic bears a silver seal — [Buy] it to obtain the master's journal",
+        },
+        journal = {
+            title = "The Master's Journals",
+            subtitle = "Find a silver seal on a customer's relic with UV and buy it to open the next part ({count}/{total})",
+            entry = "Part {index} · {title}",
+            locked = "Sealed journal",
+            locked_hint = "Not found yet — look for a silver seal on customers' relics",
+            unlocked = "Master's journal {index}: \"{title}\" — read it in [Journals]",
+            close = "Close",
+            signature = "— Orwen",
+            new = "New",
+            array = "Seal array {lit}/{slots}",
+            array_complete = "All four sockets burn",
+            opens_hint = "This part's silver seal starts turning up on customers' relics on {date}.",
+            seeking_hint = "Its silver seal can turn up on customers' relics from now on. Sweep them carefully with UV.",
+            order_hint = "The journals open in order. Find the earlier parts first.",
+            entries = {
+                omen = {
+                    title = "The Rift's Pulse",
+                    lines = {
+                        "If you are reading this, you are the new keeper of my workshop. Read it to the end with an appraiser's eye.",
+                        "Three months before the storm, the relics in my showcase began to tremble at night in the same rhythm, all leaning toward the cliff beside us.",
+                        "When I held the UV lens to the cliff, a silver-blue vein was beating in the cracks. Steady as a heart, and a little faster every day.",
+                        "The guild sent me away, calling it an old appraiser's fancy. Yet that very night their surveyors measured the cliff without a single torch.",
+                        "So I leave what I know inside silver seals. They shine only under UV. Only an eye that can tell real from fake will find these words.",
+                    },
+                },
+                ledger = {
+                    title = "The Guild's Ledger",
+                    lines = {
+                        "I bought the guild's vault-keeper a drink and read his ledger. Not one coin marked 'ward upkeep' was ever spent on a ward.",
+                        "They knew the eruption was coming. The survey listed the very day of the storm, and next to it, the price of dungeon permits.",
+                        "The ward the guild raised is little more than a fence. What holds the rift shut each night is this showcase, the song of its relics.",
+                        "The upkeep is not the price of a ward. It is the price of silence, so that we never learn we are the gatekeepers.",
+                        "I could not carry the ledger out, but I remember. On the day this workshop closes the gate, ask them where the money went.",
+                    },
+                },
+                sockets = {
+                    title = "Four Sockets in the Showcase",
+                    lines = {
+                        "The showcase was never only a showcase. In my youth I wove it as a seal array to stitch the rift shut.",
+                        "Look at the four corners of the central nine cells: row 2 column 2, row 2 column 4, row 4 column 2, row 4 column 4.",
+                        "Those four are the resonance sockets. Each holds one current — flame, lightning, curse, and gold.",
+                        "A socket still drinks from the amplifiers beside it. Lighting the array and surviving the night are the same work.",
+                        "But set just any relic there and the socket stays silent. What it needs, I write on the next page.",
+                    },
+                },
+                resonance = {
+                    title = "Five Temperings",
+                    lines = {
+                        "Only a relic tempered five times reaches the seal's note. A relic forged to +5 is the only thing that lights a socket.",
+                        "Each current keeps its place: flame upper left, lightning upper right, curse lower left, gold lower right.",
+                        "Resonance grinds a relic down. In a socket it wears 1.5 times faster each night, and a relic worn to nothing holds nothing.",
+                        "A successful forging restores even a worn relic. Guard all four embers until the last night.",
+                        "When all four sockets burn, silver-blue lines gather at the heart of the showcase. That is the key that closes the gate.",
+                    },
+                },
+                confession = {
+                    title = "From Inside the Gate",
+                    lines = {
+                        "I did not vanish. The night the rift first tore open, there was no time to finish the array.",
+                        "So I blocked the gate with my own body. I write this from inside the portal and press my seal onto dungeon relics to send them out.",
+                        "I can only pray the relics adventurers carry away reach your workbench. If the seal is still warm, I am still holding.",
+                        "But the rift eats into me little by little. The hand that grips my hammer feels heavy, as if it were not mine.",
+                        "Every night I hold back legs that want to walk toward the workshop. I do not know how much longer I can hold them.",
+                    },
+                },
+                last_will = {
+                    title = "To My Last Apprentice",
+                    lines = {
+                        "On the last night of the sixth month I will no longer be myself. The rift will wear my shell and walk out toward the workshop.",
+                        "Do not hesitate then. Strike me down with all four seal sockets lit. Only then will the gate close forever.",
+                        "Fell me while the array is dark, and the gate will look for a new keeper. It will look for you.",
+                        "My shell will wear a silver shield. Pull the lever all the way. Only the fire of an overclock can break it.",
+                        "An appraiser tells the real from the fake. On that night I am already a fake. Appraise me well, my last apprentice.",
+                    },
+                },
+            },
+        },
+        resonance = {
+            name = "Seal socket",
+            slot = "{archetype} seal socket",
+            slot_state = "{slot} · {state}",
+            tip = "{archetype} relic +{level} or higher lights the seal · wear x{mult}",
+            immortal = "A +10 Immortal relic ignores resonance wear",
+            lit_state = "Lit",
+            dark_state = "Dark",
+            lit = "{archetype} seal lit! (array {lit}/{slots})",
+            dimmed = "The {archetype} seal went dark (array {lit}/{slots})",
+            complete = "Seal array 4/4 — silver-blue resonance gathers at the heart of the showcase",
+            archetypes = { fire = "Flame", lightning = "Lightning", curse = "Curse", gold = "Gold" },
+        },
+        boss = {
+            banner = "The Last Night",
+            banner_sub = "The rift-swallowed shade of your master walks out",
+            bar_name = "Rift Shade (Master)",
+            aegis = "Rift Aegis",
+            aegis_hint = "Overclock to shatter the shield!",
+            aegis_progress = "Break {pct}%",
+            aegis_broken = "Aegis shattered! Staggered",
+            groggy = "Staggered",
+            lockdown = "Lockdown — {line} chained",
+            row = "row {n}",
+            col = "column {n}",
+            sealed = "Seals {lit}/{slots} — the master's shade falls asleep",
+            unsealed = "Seals {lit}/{slots} — the rift will not close",
+        },
+        hover = {
+            journal_title = "Master's journals · seal array",
+            journal_body = "Reread the journals you found. Defeat the last night's boss with all four seal sockets lit for the true ending.",
+        },
+    },
+}

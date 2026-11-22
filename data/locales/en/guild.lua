@@ -1,0 +1,215 @@
+-- data/locales/en/guild.lua
+-- Guild, quest and adventurer text (English): [Guild] window, [Quests] window (guild quests · black market offers),
+-- risk levels, the six unique adventurers. No logic. {address} is replaced with the player's title (Workshop:personalize).
+
+return {
+    guild = {
+        title = "Graven Dungeon Wardens' Guild",
+        subtitle = "Gold {gold} G  ·  Tempering stones {stones}  ·  Same supply prices day or night",
+        lore = "When the mana storm tore a dungeon portal open beside the workshop, the Dungeon Wardens' Guild of Graven raised a ward around it. While the ward stands, the things beyond the portal crawl out only at night — and at every month's end the Guild collects its ward upkeep. Miss a single payment and the ward comes down and the workshop is evicted on the spot. The Guild is honest about one thing: its ledger. Supplies always cost the same.",
+        upkeep_title = "Ward Upkeep Status",
+        schedule_title = "Contract payment schedule",
+        schedule_paid = "{date}  {amount} G  · paid",
+        schedule_tonight = "{date}  {amount} G  · tonight",
+        schedule_due = "{date}  {amount} G",
+        schedule_more = "… {count} more until the contract ends",
+        schedule_paid_count = "Paid {count} time(s)",
+        shop_title = "Guild Supply Shop",
+        daily_left = "Left today {left}/{limit}  ·  Owned {have}",
+    },
+
+    quest_ui = {
+        title = "Quest Board",
+        subtitle = "{count} offer(s) awaiting an answer  ·  Accept, decline and deliver by day · Missed deadlines cost a fine",
+        empty = "No quests have come in today.",
+        empty_detail = "When a black market dealer or a guild courier drops by, their offers get pinned here.",
+        source_market = "Black market offer",
+        source_guild = "Guild quest · {category}",
+        state_pending = "Waiting",
+        state_accepted = "Active",
+        state_done = "Complete",
+        state_failed = "Failed",
+        story = "Background",
+        goal = "Objective",
+        reward = "Reward",
+        penalty = "If overdue",
+        risk = "Risk",
+        accept = "Accept",
+        decline = "Decline",
+        deliver = "Deliver",
+        day_only = "Quests can only be accepted, declined or delivered during the day.",
+        deliver_none = "This quest takes no delivery.",
+        deliver_missing = "No matching relic on the spare rack or the bench. (Move display relics to the rack first)",
+        reward_gold = "{gold} G",
+        reward_stones = "{stones} tempering stone(s)",
+        reward_discount = "next upkeep -{percent}%",
+        reward_repair = "emergency wall repair +{amount}",
+        payout_discount = "next upkeep -{amount} G",
+        payout_repair = "wall +{amount}",
+        reward_join = "  ·  ",
+        card_reward = "Reward: {reward}",
+        card_deadline = "Due by the night of {date} (D-{days})",
+        card_deadline_today = "Due by tonight (D-Day)",
+        deadline = "Until the night of {date} ends ({days} day(s) incl. today)",
+        deadline_today = "Until tonight ends",
+        penalty_text = "Pay a {fine} G fine at once. If you are short, the rest is added to the next ward upkeep.",
+        penalty_none = "No penalty before you accept — the offer is withdrawn when night falls.",
+        box_line = "{name}  ·  {grades} +{min}~{max}",
+        progress_count = "Progress {now} / {target}",
+        progress_overclock = "Overclock held {now} / {target}s — judged at dawn (survive the night)",
+        progress_deliver_ready = "A matching relic is ready — press [Deliver]",
+        progress_deliver_wait = "Get a matching relic onto the spare rack or the bench",
+        progress_done = "Complete! Reward paid.",
+        progress_failed = "Not finished in time. Fine {fine} G (added to upkeep: {surcharge} G)",
+        category = { forge = "Forged delivery", appraisal = "Appraisal sting", combat = "Combat", purify = "Purified delivery" },
+        element = { fire = "Fire", lightning = "Lightning", frost = "Frost", curse = "Curse", gold = "Gold" },
+    },
+
+    risk = { none = "None", low = "Low", mid = "Medium", high = "High" },
+
+    quests = {
+        forge_delivery = {
+            name = "Forged Relic Delivery",
+            story = "The guild armory has run dry. An inspector wants relics hammered in the workshop furnace. \"{address}, only fire-tempered pieces will do for the ward guard.\"",
+            goal = "[Deliver] 1 relic of {grade} grade or better, forged to +{level} or higher",
+        },
+        expose_fraud = {
+            name = "Forged Seal Sting",
+            story = "Relics bearing forged guild seals and hidden curses are making the rounds. The Guild wants an appraiser's eye to unmask the swindlers.",
+            goal = "After accepting, expose a customer's grade forgery (fake guild seal) or hidden curse with UV {target} times",
+        },
+        overclock_trial = {
+            name = "Overclock Endurance Test",
+            story = "The guild wardsmiths want to measure the display case's overclock limits. Keep the lever down and live through the night.",
+            goal = "In one night, keep the overclock lever on for {target}s or more and survive that night (overclocked relics wear faster)",
+        },
+        boss_hunt = {
+            name = "{boss_time} Boss Hunt",
+            story = "The portal watchtower spotted a great shadow. The Guild wants it felled in front of the workshop before it pounds on the ward.",
+            goal = "Defeat the boss '{boss}' that appears on the night of {date}",
+        },
+        purify_delivery = {
+            name = "{element} Purification Delivery",
+            story = "The guild vault needs a {element} relic free of mana sludge for ward maintenance. Scrub it spotless and bring it in.",
+            goal = "[Deliver] 1 {element} relic scrubbed to 0% grime",
+        },
+        boss_time = { mid = "Mid-month", month_end = "Month-end" },
+    },
+
+    market_quests = {
+        mystery_boxes = {
+            story = "A hooded dealer left three sealed, unappraisable boxes at the back door. \"Nobody knows until it's open, {address}.\"",
+            goal = "Accept to buy and open the three boxes (Rusted · Silver · Obsidian) with gold (today only)",
+            reward = "{success}% chance of a highly forged rare or legendary relic",
+            accepted = "The dealer laid out the boxes — open them with the buttons on the right",
+        },
+        fence_request = {
+            story = "The fence slipped in quietly. \"I'll buy flawed goods as they are. Only until sundown.\"",
+            goal = "Accept and flawed (cracked · cursed) relics sell for x{mult} today",
+            reward = "Put a flawed relic on the bench and [Sell]",
+            accepted = "Flawed relics sell for x{mult} today",
+        },
+        blood_moon = {
+            story = "On a blood moon night, the black market whispers it can touch the Guild's upkeep ledger. The price is a raging portal.",
+            goal = "Accept and tonight's monsters get HP x{hp} · speed x{speed} — survive until dawn",
+            reward = "Next ward upkeep -{discount} G",
+            accepted = "Blood moon tonight — survive it for upkeep -{discount} G",
+        },
+    },
+
+    adventurers = {
+        display = "{name} {epithet}",
+        bern = {
+            name = "Bern", epithet = "the Iron",
+            lines = {
+                "\"{address}, a {grade} {item}. A sellsword doesn't lie about steel.\"",
+                "\"Picked this {item} off a battlefield. {grade} grade — just give me a fair price.\"",
+                "\"One {item}. Looks {grade} to me, {address}.\"",
+            },
+            caught = {
+                forgery = "\"…Tch, sharp eyes. Fine, I talked the grade up. I'll knock the price down.\"",
+                curse = "\"Cursed…? Picked it off a battlefield, didn't know. I'll lower the price, honest.\"",
+                crack = "\"Cracked, was it? A sellsword should've seen that. Take it cheaper.\"",
+            },
+        },
+        rina = {
+            name = "Rina", epithet = "the Graverobber",
+            lines = {
+                "\"Smells a bit of the crypt, but it's a {grade} {item}, {address}. It'll shine once cleaned!\"",
+                "\"Shh, don't ask where it's from. {item}, {grade} grade.\"",
+                "\"Still got some dirt on it… a {grade} {item}! I'll go cheap.\"",
+            },
+            caught = {
+                forgery = "\"Eh, ehe~ it looks like that to you? Must've been the crypt dust… heh.\"",
+                curse = "\"C-cursed?! So that's what was whispering at night… I'll go cheap!\"",
+                crack = "\"Oh, a crack? Maybe my shovel hit it…? I'll lower the price, okay?\"",
+            },
+        },
+        ellen = {
+            name = "Ellen", epithet = "the Apprentice Mage",
+            lines = {
+                "\"U-um… this {item} came from my master's storeroom. {grade} grade… I think.\"",
+                "\"{address}, the mana in this {item} feels odd. I was told it's {grade}.\"",
+                "\"I don't really know prices… a {grade} {item}, whatever's fair.\"",
+            },
+            caught = {
+                forgery = "\"Wh-what?! My master said it was that grade… I-I'm so sorry!\"",
+                curse = "\"A curse mark…? No wonder my hands kept tingling… eek.\"",
+                crack = "\"It's cracked? I-I must have dropped it… sorry!\"",
+            },
+        },
+        thorin = {
+            name = "Thorin", epithet = "the Dwarf Smith",
+            lines = {
+                "\"Hmph, I tempered this {item} myself. {grade} grade, and not a copper off.\"",
+                "\"{address}, you doubt dwarven hammerwork? It's a {grade} {item}.\"",
+                "\"Anyone who knows fire knows what this {item} is worth. {grade} grade.\"",
+            },
+            caught = {
+                forgery = "\"Hmph! A dwarf's eye said that grade! …Fine, I'll cut the price this once.\"",
+                curse = "\"Any curse should've burned off in the quench! …Blast it, I'll lower the price.\"",
+                crack = "\"My hammer doesn't crack things… ahem. Fine, take it cheaper.\"",
+            },
+        },
+        kain = {
+            name = "Kain", epithet = "the Shadow Tracker",
+            lines = {
+                "\"…A {grade} {item}. Its owner won't come looking.\"",
+                "\"{address}. This {item} whispers at night. {grade} grade.\"",
+                "\"Don't ask. {item}, {grade} grade. Name your price.\"",
+            },
+            caught = {
+                forgery = "\"…Caught. Doesn't matter. Take it at that price.\"",
+                curse = "\"I knew. That's why it's cheap.\"",
+                crack = "\"…A crack hardly matters. Just pay.\"",
+            },
+        },
+        cedric = {
+            name = "Cedric", epithet = "the Fallen Noble",
+            lines = {
+                "\"An heirloom of my house — a {grade} {item}. Do not dare haggle.\"",
+                "\"{address}, surely you recognize noble goods? A {grade} {item}.\"",
+                "\"The late count's beloved {item}… {grade} grade, naturally.\"",
+            },
+            caught = {
+                forgery = "\"H-how rude! You dare question my family's treasure… ahem, very well, a small concession.\"",
+                curse = "\"Cursed? You insult my house?! …Ahem, I shall lower the price.\"",
+                crack = "\"That crack is a mark of my grandfather's glory! …Very well, a discount.\"",
+            },
+        },
+        tags = {
+            melee = "Melee specialist",
+            honest = "Honest dealer",
+            filthy = "Filthy grave goods",
+            treasure = "Loves gold & holy relics",
+            arcane = "Lightning & amplifiers",
+            naive = "Clueless about prices",
+            smith = "Fire-weapon artisan",
+            stubborn = "Never haggles down",
+            cursed = "Carries cursed relics",
+            shady = "Shady provenance",
+            forger = "Habitual grade inflater",
+            pricey = "Noble vanity prices",
+        },
+    },
+}

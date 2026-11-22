@@ -1,0 +1,33 @@
+node_modules/
+dist/
+.claude/
+__pycache__/
+scripts/debug_out/
+*.love
+index.html
+src/
+package.json
+package-lock.json
+vite.config.js
+scripts/
+/assets/bg_clean.png
+/assets/depth.png
+/assets/mask_*.png
+/assets/sign_sprite.png
+/assets/scene_meta.json
+
+# ── OS · 편집기 ──
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# ── 세이브: 이 게임은 %APPDATA%\LOVE\midnight_workshop 에 저장해 프로젝트 폴더에는 생기지 않는다 (혹시를 대비) ──
+save_run.lua
+save_meta.lua
+save_settings.lua
+progress.txt
+
+# ── 더빙 음성(assets/voices, edge-tts 로 생성)의 재배포 약관을 확인하기 전까지 빼려면 아래 줄의 # 를 지우세요 ──
+# /assets/voices/
